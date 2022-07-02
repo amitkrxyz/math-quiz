@@ -1,0 +1,75 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+nav {
+  padding: 1rem 1rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+}
+
+.quests {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 1rem; */
+  margin: 4rem 0;
+}
+.quest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 6rem;
+  aspect-ratio: 1;
+  font-size: rem;
+  border-radius: 0.25rem;
+  background-color: darkblue;
+  color: white;
+  font-size: 2rem;
+}
+
+.operator {
+  background-color: white;
+  color: darkblue;
+  font-size: 4rem;
+  font-weight: lighter;
+}
+.btns {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  margin: 1rem 1rem;
+  width: 8rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  font-size: 1.25rem;
+}
+
+.lvl {
+  color: white;
+  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  aspect-ratio: 1;
+  width: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+#increment {
+  background-color: tomato;
+}
+#decrement {
+  background-color: greenyellow;
+}
