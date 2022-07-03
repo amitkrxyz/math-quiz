@@ -1,5 +1,5 @@
 const firstNumText = document.querySelector("#first-num");
-const operator = document.querySelector("#operator");
+const operatorText = document.querySelector("#operator");
 const secondNumText = document.querySelector("#second-num");
 const btns = document.querySelectorAll(".btn");
 const incrLevel = document.querySelector("#increment");
@@ -13,21 +13,46 @@ let level = 10;
 
 const setEverything = () => {
   const firstNum = Math.floor(Math.random() * level);
-  const secondNum = Math.floor(Math.random() * level);
-  firstNumText.textContent = firstNum.toString();
-  secondNumText.textContent = secondNum.toString();
-  operator.textContent = "+";
-
-  const correctAns = firstNum + secondNum;
-  const correctbtn = Math.floor(Math.random() * 4);
+  let secondNum = Math.floor(Math.random() * level);
+  const operators = ["+", "-", "x"];
+  const operator = operators[Math.floor(Math.random() * operators.length)];
   const wrongAnswers = new Set();
-  while (wrongAnswers.size < 4) {
-    const wrongAns =
-      Math.floor(Math.random() * level) + Math.floor(Math.random() * level);
-    if (wrongAns !== correctAns) {
-      wrongAnswers.add(wrongAns);
+  let correctAns = null;
+  if (operator === "+") {
+    correctAns = firstNum + secondNum;
+    while (wrongAnswers.size < 4) {
+      const wrongAns =
+        Math.floor(Math.random() * level) + Math.floor(Math.random() * level);
+      if (wrongAns !== correctAns) {
+        wrongAnswers.add(wrongAns);
+      }
+    }
+  } else if (operator === "-") {
+    secondNum = Math.floor(Math.random() * firstNum);
+    correctAns = firstNum - secondNum;
+    while (wrongAnswers.size < 4) {
+      const wrongAns =
+        Math.floor(Math.random() * level) + Math.floor(Math.random() * level);
+      if (wrongAns !== correctAns) {
+        wrongAnswers.add(wrongAns);
+      }
+    }
+  } else if (operator === "x") {
+    correctAns = firstNum * secondNum;
+    while (wrongAnswers.size < 4) {
+      const wrongAns =
+        Math.floor(Math.random() * level) * Math.floor(Math.random() * level);
+      if (wrongAns !== correctAns) {
+        wrongAnswers.add(wrongAns);
+      }
     }
   }
+  console.log(secondNum);
+  operatorText.textContent = operator.toString();
+  firstNumText.textContent = firstNum.toString();
+  secondNumText.textContent = secondNum.toString();
+
+  const correctbtn = Math.floor(Math.random() * 4);
 
   for (let i = 0; i < btns.length; i++) {
     if (i === correctbtn) {
