@@ -3,6 +3,7 @@ body {
   height: 100%;
   overflow: hidden;
   font-family: monospace;
+  transition: background 1s;
 }
 
 nav {
@@ -18,7 +19,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 1rem; */
   margin: 4rem 0;
 }
 .quest {
@@ -35,7 +35,7 @@ nav {
 }
 
 .operator {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   color: darkblue;
   font-size: 4rem;
   font-weight: lighter;
