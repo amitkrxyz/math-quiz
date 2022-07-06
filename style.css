@@ -178,8 +178,7 @@ body {
   }
 }
 
-button:hover,
-button:focus {
+button:hover {
   outline-offset: -6px;
   outline: 2px solid rgba(0, 0, 0, 0.5);
 }
